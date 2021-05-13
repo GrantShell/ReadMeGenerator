@@ -34,6 +34,12 @@ const questions = [
   },
   {
     type: "input",
+    message:
+      "What are the necessary dependencies that must be installed to run the application:",
+    name: "installation",
+  },
+  {
+    type: "input",
     message: "Enter your GitHub Username:",
     name: "github",
   },
