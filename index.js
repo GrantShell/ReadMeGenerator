@@ -49,3 +49,22 @@ const questions = [
     choices: ["1", "2", "3", "4"],
   },
 ];
+
+function writeFile(fileName, Data) {
+  fs.writeFile(fileName, data, function (err) {
+    console.log(fileName);
+    console.log(data);
+    if (err) {
+      return console.log(err);
+    } else {
+      console.log("success");
+    }
+  });
+}
+
+function init() {
+  inquirer.prompt(questions).then(function (data) {
+    writeFile("README.md", generatorTemplete(data));
+    console.log(data);
+  });
+}
