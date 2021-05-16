@@ -54,7 +54,7 @@ const questions = [
     type: "list",
     message: "Which license do you want to use",
     name: "license",
-    choices: ["1", "2", "3", "4"],
+    choices: ["copyleft", "lpgl", "MIT", "permissive", "proprietary", "public"],
   },
 ];
 
