@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+const generatorTemplate = require("./temp/generatorTemplate");
+
 const questions = [
   {
     type: "input",
@@ -56,7 +58,7 @@ const questions = [
   },
 ];
 
-function writeFile(fileName, Data) {
+function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, function (err) {
     console.log(fileName);
     console.log(data);
@@ -70,7 +72,9 @@ function writeFile(fileName, Data) {
 
 function init() {
   inquirer.prompt(questions).then(function (data) {
-    writeFile("README.md", generatorTemplete(data));
+    writeToFile("./newReadMe/ReadMe.md", generatorTemplate(data));
     console.log(data);
   });
 }
+
+init();
